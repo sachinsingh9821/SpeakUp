@@ -1,5 +1,44 @@
 import { useState } from "react";
 
+// All practice modes in one place. "planned" modes are shown but can't be started.
+const PRACTICE_MODES = [
+  {
+    id: "conversation",
+    label: "Conversation",
+    emoji: "💬",
+    description: "Practice natural conversations.",
+    status: "active",
+  },
+  {
+    id: "storytelling",
+    label: "Storytelling",
+    emoji: "📖",
+    description: "Learn to tell better stories.",
+    status: "active",
+  },
+  {
+    id: "confidence",
+    label: "Confidence",
+    emoji: "🎤",
+    description: "Speak with more confidence.",
+    status: "active",
+  },
+  {
+    id: "interview",
+    label: "Interview",
+    emoji: "💼",
+    description: "Prepare for placement interviews.",
+    status: "active",
+  },
+  {
+    id: "humor",
+    label: "Humor",
+    emoji: "😎",
+    description: "Make your conversations more engaging.",
+    status: "planned",
+  },
+];
+
 function App() {
   const [screen, setScreen] = useState("home");
   const [practiceType, setPracticeType] = useState("Conversation");
@@ -122,7 +161,7 @@ function App() {
 
             <p>
               Your personal communication coach. Practice conversations,
-              storytelling, confidence, and humor in a judgment-free space.
+              storytelling, confidence, and interviews in a judgment-free space.
             </p>
 
             <button
@@ -143,41 +182,23 @@ function App() {
           </div>
 
           <div className="practice-grid">
-            <div
-              className="practice-card"
-              onClick={() => startSession("Conversation")}
-            >
-              <div className="practice-icon">💬</div>
-              <h3>Conversation</h3>
-              <p>Practice natural conversations.</p>
-            </div>
+            {PRACTICE_MODES.map((mode) => {
+              const isPlanned = mode.status === "planned";
 
-            <div
-              className="practice-card"
-              onClick={() => startSession("Storytelling")}
-            >
-              <div className="practice-icon">📖</div>
-              <h3>Storytelling</h3>
-              <p>Learn to tell better stories.</p>
-            </div>
-
-            <div
-              className="practice-card"
-              onClick={() => startSession("Confidence")}
-            >
-              <div className="practice-icon">🎤</div>
-              <h3>Confidence</h3>
-              <p>Speak with more confidence.</p>
-            </div>
-
-            <div
-              className="practice-card"
-              onClick={() => startSession("Humor")}
-            >
-              <div className="practice-icon">😎</div>
-              <h3>Humor</h3>
-              <p>Make your conversations more engaging.</p>
-            </div>
+              return (
+                <button
+                  key={mode.id}
+                  className="practice-card"
+                  disabled={isPlanned}
+                  onClick={() => startSession(mode.label)}
+                >
+                  <div className="practice-icon">{mode.emoji}</div>
+                  <h3>{mode.label}</h3>
+                  <p>{mode.description}</p>
+                  {isPlanned && <p className="coming-soon">Coming soon</p>}
+                </button>
+              );
+            })}
           </div>
         </section>
 

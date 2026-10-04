@@ -173,6 +173,22 @@ button {
   border-radius: 20px;
 
   background: #191919;
+
+  /* Cards are buttons: reset browser button defaults */
+  color: inherit;
+  text-align: left;
+}
+
+.practice-card:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.practice-card .coming-soon {
+  margin-top: 12px;
+  color: #ff7a18;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .practice-icon {
