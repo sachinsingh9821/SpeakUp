@@ -12,3 +12,16 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+
+# ML data, audio, model weights and experiment tracking
+ml/data/
+*.wav
+*.mp3
+*.flac
+*.pt
+*.pth
+*.safetensors
+*.onnx
+wandb/
+.ipynb_checkpoints/
+mlruns/
