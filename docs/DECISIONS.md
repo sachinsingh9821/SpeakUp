@@ -95,8 +95,17 @@ Format: **Decision**, **Why**, **Alternatives considered**, **Date**.
 - **Alternatives:** Keep the original four modes; drop Humor entirely.
 - **Date:** Oct 2026
 
+### 18. Scores are split into measured vs LLM-assessed; no numeric confidence or fluency
+- **Why:** Every number shown to the user should have a source we can explain. Filler rate comes from our model; words per minute from Whisper word timestamps; long pauses from Silero VAD. Grammar and vocabulary are judged by the LLM, so they're labeled "Mr. Combs' assessment" rather than shown as measurements. Confidence and fluency are too vague to measure honestly with what we have, so they're dropped as numbers (Mr. Combs can still comment on them in words).
+- **Alternatives:** Asking the LLM for 1–10 scores on everything (looks impressive, but can't be defended as a measurement).
+- **Date:** Oct 2026 (from the 2026-10-04 audit)
+
+### 19. Text-to-Speech moved to v2
+- **Why:** Written feedback is enough for the MVP. TTS adds a paid service and another integration without adding anything to the ML pipeline, which is the core of the project.
+- **Alternatives:** OpenAI TTS or ElevenLabs in the MVP.
+- **Date:** Oct 2026
+
 ---
 
 ## Open decisions
-- **Text-to-Speech provider:** OpenAI TTS vs ElevenLabs. Decide when building Mr. Combs' voice.
 - **Backend hosting:** Railway vs Hugging Face Spaces, depending on model memory needs.
