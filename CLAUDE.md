@@ -119,3 +119,4 @@ Conversation memory in v1 = last N messages of the current session only.
 - After each feature, propose a short entry for `docs/DEVLOG.md` (what was built, files touched, key concepts). Leave the "In my own words" and interview-answer sections for the developer to write. If a significant technical choice was made, propose an entry for `docs/DECISIONS.md`.
 - Keep commits small, with conventional messages (`feat:`, `fix:`, `chore:`, `docs:`).
 - Don't add features, libraries, or abstractions beyond what the current task needs.
+- Before implementing an ML-related feature, read `docs/LEARNING_PLAN.md`, identify the concepts required for that milestone, teach me the necessary concepts first, and then guide me through implementation. Do not make me complete unrelated playlists before building the project.
