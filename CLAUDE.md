@@ -107,7 +107,7 @@ Conversation memory in v1 = last N messages of the current session only.
 ## Scope
 **MVP practice modes:** Conversation, Storytelling, Confidence, Interview (new; the main use case for students preparing for placements).
 
-**Humor is planned for v2. Do not delete it.** It currently exists only as a hard-coded card in `App.jsx`. Keep the card but show it as "Coming soon" and not clickable. When practice modes are next touched, define them in one list with a status field (e.g. `{ id: "humor", label: "Humor", status: "planned" }`), so adding or enabling a mode means editing data, not rewriting screens.
+**Humor is planned for v2 (status `"planned"` in `PRACTICE_MODES`). Do not delete it.**
 
 **v2:** Humor, Text-to-Speech voice for Mr. Combs, numeric confidence/fluency scores (only if they can be measured), community features, advanced coaching, personalized difficulty, video/body-language analysis, emotion detection, group discussions, debate mode, payments, AI avatars, multiplayer, cross-session long-term memory. Do not build these.
 
